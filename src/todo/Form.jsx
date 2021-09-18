@@ -25,15 +25,23 @@ const Form = ({input, setInput, todos, setTodos, setStatus}) => {
         setStatus(event.target.value);
     }
     return (
-        <div className="form">
-            <input value={input} onChange={todoInputHandler} type="text" name="form" id="form"/>
-            <button onClick={todoAddHandler} name="add">Add</button>
-            <select className="status" onChange={statusHandler}>
-                <option value='all'>All</option>
-                <option value='completed'>Completed</option>
-                <option value='uncompleted'>Uncompleted</option>
-            </select>
+        <div className="flex-form-container">
+            <div className="flex-form">
+                <input className="form-input" value={input} onChange={todoInputHandler} type="text" name="form" id="form"/>
+                <button className="form-btn" onClick={todoAddHandler} name="add">
+                <i className="fas fa-plus"></i>
+                </button>
+            </div>
+
+            <div className="todo-items">
+                <select className="status" onChange={statusHandler}>
+                    <option value='all'>All</option>
+                    <option value='completed'>Completed</option>
+                    <option value='uncompleted'>Uncompleted</option>
+                </select>
+            </div>
         </div>
+
        
     );
 }

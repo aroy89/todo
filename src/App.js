@@ -53,10 +53,12 @@ function App() {
   }
   }
   return (
-    <div className="main">
-      <header>
-        <h1>My Todo App</h1>
+    <div className="flex-container">
+      <header className="flex-item flex-header">
+        <h1>ROY TODO LIST</h1>
       </header>
+      
+      <div className="flex-item flex-form">
       <Form 
         input={input} 
         setInput={setInput}
@@ -65,11 +67,15 @@ function App() {
         setStatus={setStatus}
         // setFilteredTodos={setFilteredTodos}
         />
-      <TodoList 
-         todos={todos}
-         setTodos={setTodos}
-         filteredTodos={filteredTodos}
-      />
+      </div>
+      <div className="flex-item flex-todo-list">
+        <TodoList 
+          todos={todos}
+          setTodos={setTodos}
+          filteredTodos={filteredTodos}
+        />
+      </div>
+      
     </div>
   );
 }
